@@ -12,3 +12,5 @@ export default () => (
         <AuthRoute path="/signup" component={SignupContainer} />
     </div>
 );
+
+export default App; 
