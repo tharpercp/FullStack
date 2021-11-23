@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -26,8 +27,8 @@ class SessionForm extends React.Component {
   render() {
     // console.log(this.props);
     return (
-      <div className="session-form">
-        <h2>{this.props.formType}</h2>
+      <div className="session-form" style={{ backgroundImage: "url(/image.png)" }}>
+        <h2>Login to Pictr</h2>
         <form onSubmit={this.handleSubmit}>
           <label>Username:
           <input
@@ -44,7 +45,8 @@ class SessionForm extends React.Component {
             onChange={this.update('password')}
           />
           </label>
-          <input type="submit" value={this.props.formType} />
+          <input type="submit" value='Sign In'/>
+          <p>New to Pictr?  <Link to="/signup">Sign up here</Link></p>
         </form>
       </div>
     );

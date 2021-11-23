@@ -4,13 +4,13 @@ class Api::SessionsController < ApplicationController
       if @user.nil?
         render json: ['Incorrect credentials!'], status: 401
       else
-        login!(@user)
+        sign_in!(@user)
         render 'api/users/show';
       end
     end
   
     def destroy
-      logout!
+      sign_out!
       render json: { message: 'Logout successful.' }
     end
   end
