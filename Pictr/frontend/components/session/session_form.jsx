@@ -19,15 +19,15 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.login(this.state)
-      .then(() => this.props.history.push('/feed'));
+    const user = Object.assign({}, this.state);
+    this.props.processForm(user);
   }
 
   render() {
     // console.log(this.props);
     return (
       <div className="session-form">
-        <h2>Log In!</h2>
+        <h2>{this.props.formType}</h2>
         <form onSubmit={this.handleSubmit}>
           <label>Username:
           <input

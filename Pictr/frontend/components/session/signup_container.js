@@ -9,7 +9,7 @@ const mSTP = ({ errors }) => ({
 
 
 const mDTP = dispatch => ({
-    createNewUser: formUser => dispatch(createNewUser(formUser))
+    processForm: formUser => dispatch(createNewUser(formUser))
 });
 
-export default connect(null, mDTP)(SessionForm);
+export default connect(mSTP, mDTP)(SessionForm);
