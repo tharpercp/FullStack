@@ -4,11 +4,11 @@ import {
     
 } from '../actions/session';
 
-const _nullSession = {
-    currentUser: null,
-};
+const _nullSession = Object.freeze({
+    id: null
+});
 
-export default (state=_nullSession, action) => {
+const sessionReducer = (state=_nullSession, action) => {
     Object.freeze(state);
     
     switch(action.type){
@@ -20,3 +20,5 @@ export default (state=_nullSession, action) => {
             return state;
     }
 };
+
+export default sessionReducer;
