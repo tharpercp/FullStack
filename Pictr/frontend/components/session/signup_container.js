@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { createNewUser } from '../../actions/session';
-import SessionForm from './session_form';
+import CreateSessionForm from './session_form';
 
 const mSTP = ({ errors }) => ({
     errors: errors,
