@@ -16,5 +16,7 @@ class Api::SessionsController < ApplicationController
         render json: ['Logout successful']
       else
         render json: ['No User Logged In']
+      end
     end
+
   end

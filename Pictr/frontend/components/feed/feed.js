@@ -1,12 +1,19 @@
 import React from "react";
 
 
-const Feed = () => {
+class Feed extends React.Component {
+    constructor(props){
+        super(props);
+    }
+
+    render() {
         return (
             <div>
-                <h1>Home Feed</h1>
+                <h2>Home Feed</h2>
+                <button onClick={() => this.props.logout()}>Log Out</button>
             </div>
         )
+    }
 };
 
 export default Feed;
