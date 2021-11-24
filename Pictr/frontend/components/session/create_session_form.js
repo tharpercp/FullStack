@@ -33,7 +33,7 @@ class CreateSessionForm extends React.Component {
     return (
       <div className="session-form">
         <h2>Create Account</h2>
-        <form onSubmit={this.handleSubmit}>
+        <form>
           <label>Username:
           <input
             type="text"
@@ -49,7 +49,7 @@ class CreateSessionForm extends React.Component {
             onChange={this.update('password')}
           />
           </label>
-          <input type="submit"/>
+          <button onClick={this.handleSubmit}/>
           <p>Already have an account?<Link to="/">Sign in here</Link></p>
         </form>
       </div>

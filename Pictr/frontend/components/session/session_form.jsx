@@ -24,8 +24,8 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm(this.state)
+      .then(() => this.props.history.push('/feed'));
   }
 
   render() {
@@ -33,7 +33,7 @@ class SessionForm extends React.Component {
     return (
       <div className="session-form">
         <h2>Login to Pictr</h2>
-        <form onSubmit={this.handleSubmit}>
+        <form>
           <label>Username:
           <input
             type="text"
@@ -49,7 +49,7 @@ class SessionForm extends React.Component {
             onChange={this.update('password')}
           />
           </label>
-          <input type="submit"/>
+          <button onClick={this.handleSubmit}/>
           <p>New to Pictr?  <Link to="/signup">Sign up here</Link></p>
         </form>
       </div>

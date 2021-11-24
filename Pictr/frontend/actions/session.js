@@ -27,14 +27,21 @@ const clearErrors = () => ({
     type: RESET_SESSION_ERRORS
 });
 
-export const createNewUser = formUser => dispatch => postUser(formUser)
-    .then(user => dispatch(receiveCurrentUser(user)));
+export const createNewUser = formUser => dispatch => {
+    return postUser(formUser)
+    .then(user => dispatch(receiveCurrentUser(user)),
+        errors => dispatch(receiveErrors(errors.responseJSON)))
+}
 
-export const login = formUser => dispatch => postSession(formUser)
-    .then(user => dispatch(receiveCurrentUser(user)));
+export const login = formUser => dispatch => {
+    return postSession(formUser)
+        .then(user => dispatch(receiveCurrentUser(user)),
+            errors => dispatch(receiveErrors(errors.responseJSON)))
+}
 
-export const logout = () => dispatch => deleteSession()
-    .then(() => dispatch(logoutCurrentUser()));
+export const logout = () => dispatch => 
+    deleteSession()
+        .then(() => dispatch(logoutCurrentUser()));
 
 export const resetSessionErrors = () => dispatch => {
     dispatch(clearErrors());
