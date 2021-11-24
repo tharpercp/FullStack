@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class SessionForm extends React.Component {
+class CreateSessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,13 +22,13 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
+    this.props.login(user)
   }
 
   render() {
-    // console.log(this.props);
     return (
       <div className="session-form">
-        <h2>Login to Pictr</h2>
+        <h2>Create Account</h2>
         <form onSubmit={this.handleSubmit}>
           <label>Username:
           <input
@@ -46,11 +46,11 @@ class SessionForm extends React.Component {
           />
           </label>
           <input type="submit"/>
-          <p>New to Pictr?  <Link to="/signup">Sign up here</Link></p>
+          <p>Already have an account?<Link to="/">Sign in here</Link></p>
         </form>
       </div>
     );
   }
 }
 
-export default SessionForm;
+export default CreateSessionForm;
