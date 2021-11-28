@@ -10,6 +10,8 @@ class loginForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
+    // this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentDidMount (){
@@ -27,26 +29,34 @@ class loginForm extends React.Component {
     this.props.processForm(this.state)
   }
 
-  renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={i}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
+  demoLogin(e) {
+    e.preventDefault();
+    this.props.processForm({
+      username: 'tyler',
+      password: 'password',
+    }).then(() => this.props.history.push('/feed'));
   }
+
+  // renderErrors() {
+  //   return(
+  //     <ul>
+  //       {this.props.errors.map((error, i) => (
+  //         <li key={i}>
+  //           {error}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
 
   render() {
     return (
       <div className="session-form">
-        <br/>
+        {/* <br/>
         {this.renderErrors()}
-        <br/>
+        <br/> */}
         <h2>Login to Pictr</h2>
-        <form onSubmit={this.handleSubmit}>
+        <form>
           <label>Username:
           <input
             type="text"
@@ -62,7 +72,8 @@ class loginForm extends React.Component {
             onChange={this.update('password')}
           />
           </label>
-          <input className="submit" type="submit" />
+          <button onClick={this.handleSubmit}>Log In!</button>
+          <button onClick={this.demoLogin}>Demo Log In</button>
           <p>New to Pictr?  <Link to="/signup">Sign up here</Link></p>
         </form>
       </div>
