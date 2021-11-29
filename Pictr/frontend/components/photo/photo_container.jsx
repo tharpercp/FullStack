@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Feed from './feed';
-import { logoutUser } from '../../actions/session';
+import { createPhoto } from '../../actions/session';
+import Photo from './photo'
 
 const mSTP = () => ({
   
@@ -9,7 +9,7 @@ const mSTP = () => ({
 
 const mDTP = dispatch => ({
   resetErrors: () => dispatch(resetSessionErrors()),
-  logout: () => dispatch(logoutUser())
+  postPhoto: photo => dispatch(createPhoto(photo))
 });
 
-export default connect(null, mDTP)(Feed);
+export default connect(null, mDTP)(Photo);

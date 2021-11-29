@@ -20,3 +20,11 @@ export const logout = () => (
         method: 'DELETE',
     })
 );
+
+export const postPhoto = photo => (
+    $.ajax({
+        url: 'api/photo',
+        method: 'POST',
+        data: { photo },
+    })
+);

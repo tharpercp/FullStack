@@ -1,27 +1,35 @@
 .navbar {
     overflow: hidden;
     background-color: rgb(32, 32, 32);
+    width: 100%;
+    height: 40px;
 }
 
 .navbar li {
     float: left;
-    display: block;
+    display: flex;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 12px;
+}
+
+li strong {
+    float: left;
+    margin-left: -33px;
+    margin-top: -8px;
 }
 
 .links {
     background-color: rgb(32, 32, 32);
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .feed {
     display: flex;
     justify-content: center;
-    background-color: grey;
+    background-color: rgb(32, 32, 32);
     flex-direction: column;
     align-items: center;
     position: fixed;
@@ -34,7 +42,8 @@
 }
 
 .feed h2 {
-    background-color: lightblue;
+    background-color: rgb(32, 32, 32);
+    color: white;
 }
 
 .construction {
