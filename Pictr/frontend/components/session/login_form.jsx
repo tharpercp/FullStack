@@ -20,7 +20,7 @@ class loginForm extends React.Component {
 
   update(field) {
     return (e) => {
-      this.setState({ [field]: e.currentTarget.value });
+      this.setState({ [field]: e.target.value });
     };
   }
 
@@ -38,44 +38,57 @@ class loginForm extends React.Component {
   }
 
   // renderErrors() {
-  //   return(
-  //     <ul>
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={i}>
-  //           {error}
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   );
+  //   if (this.props.errors) {
+  //     console.log(this.props.errors)
+  //     return(
+  //       <ul>
+  //         {this.props.errors.map((error, i) => (
+  //           <li key={i}>
+  //             {error}
+  //           </li>
+  //         ))}
+  //       </ul>
+  //     );
+  //   } else {
+  //     return null; 
+  //   }
   // }
 
   render() {
     return (
-      <div className="session-form">
-        {/* <br/>
-        {this.renderErrors()}
-        <br/> */}
-        <h2>Login to Pictr</h2>
-        <form>
+      <div>
+        <ul className="emptynav">
+            <li><img id="logo" src="https://i.ibb.co/C7SG390/logo-blackbg.jpg"/><strong>pictr</strong></li>
+        </ul>
+        <div className="session-form">
+        <img className="logo" src="https://i.ibb.co/28zgMwN/Logo-whitebg.jpg"/>
+        <br/>
+        <h2 className="login-text">Log in to Pictr</h2>
+        <br/>
+        <form className="login-form">
           <label>Username:
+          <br/>
           <input
             type="text"
             value={this.state.username}
             onChange={this.update('username')}
           />
           </label>
-
+          <br/>
           <label>Password:
+          <br/>
           <input
             type="password"
             value={this.state.password}
             onChange={this.update('password')}
           />
+          <br/>
+          <button className="session-button" onClick={this.handleSubmit}>Log In!</button>
+          <button className="session-button" onClick={this.demoLogin}>Demo Log In</button>
+          <p className="sign-up">New to Pictr?  <Link className="link" to="/signup">Sign up here</Link></p>
           </label>
-          <button onClick={this.handleSubmit}>Log In!</button>
-          <button onClick={this.demoLogin}>Demo Log In</button>
-          <p>New to Pictr?  <Link to="/signup">Sign up here</Link></p>
         </form>
+        </div>
       </div>
     );
   }

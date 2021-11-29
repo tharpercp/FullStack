@@ -1,0 +1,43 @@
+.navbar {
+    overflow: hidden;
+    background-color: rgb(32, 32, 32);
+}
+
+.navbar li {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.links {
+    background-color: rgb(32, 32, 32);
+    justify-content: center;
+}
+
+.feed {
+    display: flex;
+    justify-content: center;
+    background-color: grey;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    width: 500px;
+    height:500px;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -200px;
+}
+
+.feed h2 {
+    background-color: lightblue;
+}
+
+.construction {
+    height: 400px;
+    width: 400px;
+}

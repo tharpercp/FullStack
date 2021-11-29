@@ -2,3 +2,88 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.session-form {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    width: 250px;
+    height:250px;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -100px;
+    padding-left: 15px;
+}
+
+.session-button {
+    font-weight: 600; 
+    background-color: #128fdc;
+    cursor: pointer;
+    color: white;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    font-size: xx-small;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+
+ul.emptynav {
+    overflow: hidden;
+    background-color: rgb(32, 32, 32);
+}
+ul img {
+    height: 15px;
+    width: 15px;
+    background-color: rgb(32, 32, 32);
+    text-decoration: none;
+}
+
+ul li {
+    background-color: rgb(32, 32, 32);
+}
+
+li strong {
+    background-color: rgb(32, 32, 32);
+    color: white;
+    margin-bottom: 100px;
+    font-weight: 700;
+    padding: 5px;
+}
+
+.logo {
+    height: 25px;
+    width: 25px;
+}
+
+.sign-up {
+    font-size: xx-small;
+    padding: 10px;
+    margin-left: 25px;
+}
+
+.link {
+    color: blue; 
+    cursor: pointer;
+}
+
+.login-form {
+    font-size: small;
+}
+
+.login-form input {
+    display: block;
+    margin-bottom: 1em;
+}
+
+.login-form label {
+    float: left;
+    margin-right: 0.5em;
+} 
+
