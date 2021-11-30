@@ -5,9 +5,8 @@
 .session-form {
     display: flex;
     justify-content: center;
-    background-color: white;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     position: fixed;
     width: 250px;
     height:250px;
@@ -16,33 +15,65 @@
     margin-top: -100px;
     margin-left: -100px;
     padding-left: 15px;
+    background-color: rgb(253, 253, 253);
+    border-radius: 2px;
 }
 
 .session-button {
-    font-weight: 600; 
     background-color: #128fdc;
     cursor: pointer;
-    color: white;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-    font-size: xx-small;
-    margin-left: 10px;
-    margin-right: 10px;
-    border-radius: 8px;
+    padding-bottom: 4px;
+    padding-top: 2px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 2px;
+    text-transform: none;
+    height: 18px;
+    width: 150px;
+    margin-left: 30px;
+    margin-top: 5px;
 }
+
+.button-text {
+    font-size: 10px;
+    font-weight: 500;
+    background-color: #128fdc;
+    color: white;
+    margin-left: 60px;
+    margin-bottom: 5px;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.background {
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 0;
+    background-size: cover;
+
+}
+
+
 
 
 ul.emptynav {
     overflow: hidden;
+    position: fixed;
     background-color: rgb(32, 32, 32);
+    width: 100%;
+    height: 30px;
+    z-index: 1;
 }
 ul img {
     height: 15px;
     width: 15px;
     background-color: rgb(32, 32, 32);
     text-decoration: none;
+    margin-top: 10px;
+    margin-left: 14px;
 }
 
 ul li {
@@ -50,22 +81,35 @@ ul li {
 }
 
 li strong {
-    background-color: rgb(32, 32, 32);
+    float: left;
+    margin-left: 30px;
     color: white;
-    margin-bottom: 100px;
-    font-weight: 700;
-    padding: 5px;
+    background-color: rgb(32, 32, 32);
+    font-weight: 600;
+    margin-top: -20px;
 }
+
+.login-text {
+    align-self: center;
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: -5px;
+    margin-left: -15px;
+}
+
 
 .logo {
     height: 25px;
     width: 25px;
+    align-self: center;
+    margin-left: -17px;
 }
 
 .sign-up {
     font-size: xx-small;
     padding: 10px;
-    margin-left: 25px;
+    margin-left: 45px;
+
 }
 
 .link {
@@ -73,17 +117,20 @@ li strong {
     cursor: pointer;
 }
 
-.login-form {
-    font-size: small;
-}
-
 .login-form input {
     display: block;
-    margin-bottom: 1em;
+    width: 210px;
+    height: 30px;
+    border: .5px solid grey;
+    margin-left: 12px;
 }
 
 .login-form label {
     float: left;
-    margin-right: 0.5em;
+    color:darkgrey;
+    background-color: transparent;
+    font-size: 8px;
+    position: absolute;
+    margin-left: 14px;
 } 
 

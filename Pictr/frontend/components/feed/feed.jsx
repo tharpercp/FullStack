@@ -12,11 +12,12 @@ class Feed extends React.Component {
         return (
             <div className="home-page">
                 <ul className="navbar">
-                    <li><img id="logo" src="https://i.ibb.co/C7SG390/logo-blackbg.jpg"/></li>
-                    <li><strong>pictr</strong></li>
+                    <li><img className="logo" src="https://i.ibb.co/C7SG390/logo-blackbg.jpg"/></li>
+                    <li><strong className="logo-text">pictr</strong></li>
                     <li className="navlink"><Link to="/photo/new" className="links">Photos</Link></li>
                     <li className="navlink"><Link to="/account" className="links">Account</Link></li>
                     <li className="navlink"><Link to="/" onClick={this.props.logout()} className="links">Logout</Link></li>
+                    <li className="navlink"><Link to="/" className="links">Albums</Link></li>
                 </ul>
                 <div className="feed">
                     <h2>Activity feed under construction</h2>

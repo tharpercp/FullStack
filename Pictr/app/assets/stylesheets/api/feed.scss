@@ -15,12 +15,6 @@
     font-size: 12px;
 }
 
-li strong {
-    float: left;
-    margin-left: -33px;
-    margin-top: -8px;
-}
-
 .links {
     background-color: rgb(32, 32, 32);
     justify-content: space-evenly;
@@ -49,4 +43,23 @@ li strong {
 .construction {
     height: 400px;
     width: 400px;
+}
+
+.logo {
+    height: 15px;
+    width: 15px;
+    background-color: rgb(32, 32, 32);
+    text-decoration: none;
+    margin-top: 1px;
+    margin-left: 20px;
+}
+
+.logo-text {
+    float: left;
+    margin-left: 30px;
+    color: white;
+    background-color: rgb(32, 32, 32);
+    font-weight: 600;
+    margin-top: 1.8px;
+    margin-left: -30px;
 }

@@ -8,9 +8,9 @@ import PhotoContainer from './photo/photo_container';
 const App = () => (
     <div>
         <Switch>
-            <Route exactly path="/signup" component={SignupContainer}/>
-            <Route exactly path="/feed" component={FeedContainer} />
-            <Route exactly path="/photo/new" component={PhotoContainer} />
+            <Route path="/signup" component={SignupContainer}/>
+            <Route path="/feed" component={FeedContainer} />
+            <Route path="/photo/new" component={PhotoContainer} />
             <Route exactly path="/" component={LoginContainer} />
         </Switch>
     </div>
