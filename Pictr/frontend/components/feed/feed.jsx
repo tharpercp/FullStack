@@ -16,8 +16,8 @@ class Feed extends React.Component {
                     <li><strong className="logo-text">pictr</strong></li>
                     <li className="navlink"><Link to="/photo/new" className="links">Photos</Link></li>
                     <li className="navlink"><Link to="/account" className="links">Account</Link></li>
-                    <li className="navlink"><Link to="/" onClick={this.props.logout()} className="links">Logout</Link></li>
-                    <li className="navlink"><Link to="/" className="links">Albums</Link></li>
+                    <li className="navlink" onClick={() => this.props.logout()}><Link to="/" className="links">Logout</Link></li>
+                    <li className="navlink">Albums</li>
                 </ul>
                 <div className="feed">
                     <h2>Activity feed under construction</h2>

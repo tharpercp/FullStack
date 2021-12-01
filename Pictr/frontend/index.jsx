@@ -15,17 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const preloadedState = { 
             session: {id: window.currentUser.id },
             entities: {
-                users: { [window.currentUser.id]: window.currentUser }
+                user: { [window.currentUser.id]: window.currentUser },
             }
         };
         store = configureStore(preloadedState);
-          // Clean up after ourselves so we don't accidentally use the
-          // global currentUser instead of the one in the store
         delete window.currentUser;
     } else {
         store = configureStore();
     }
-
     const root = document.getElementById('root');
     window.store = store;
     ReactDOM.render(<Root store={store} />, root);

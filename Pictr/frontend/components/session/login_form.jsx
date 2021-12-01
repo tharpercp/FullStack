@@ -27,7 +27,7 @@ class loginForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state)
+    this.props.processForm(this.state).then(() => this.props.history.push('/feed'));
   }
 
   demoLogin(e) {
@@ -39,13 +39,13 @@ class loginForm extends React.Component {
   }
 
   renderErrors() {
-    if (this.props.errors) {
-      console.log(this.props.errors)
+    const errors = Object.values(this.props.errors)
+    if (errors.length > 0) {
       return(
         <ul>
-          {this.props.errors.map((error, i) => (
-            <li key={i}>
-              {error}
+          {errors.map(error => (
+            <li>
+              <p className="error">{error}</p>
             </li>
           ))}
         </ul>
@@ -83,6 +83,7 @@ class loginForm extends React.Component {
           />
           <button className="session-button" onClick={this.handleSubmit}><span className="button-text">Sign in</span></button>
           <button className="session-button" onClick={this.demoLogin}><span className="button-text">Demo</span></button>
+          <div className="errors-container">{this.renderErrors()}</div>
           <p className="sign-up">New to Pictr? <Link className="link" to="/signup">Sign up here</Link></p>
         </form>
         </div>

@@ -32,32 +32,28 @@ class signupForm extends React.Component {
     return (
       <div>
         <ul className="emptynav">
-            <li><img id="logo" src="https://i.ibb.co/C7SG390/logo-blackbg.jpg"/><strong>pictr</strong></li>
-          </ul>
+            <li><img id="logo" src="https://i.ibb.co/C7SG390/logo-blackbg.jpg"/></li>
+            <li><strong>pictr</strong></li>
+        </ul>
+        <img className="background" src="https://i.ibb.co/pXvJbpj/pictr-backdrop.jpg"/>
         <div className="session-form">
         <img className="logo" src="https://i.ibb.co/28zgMwN/Logo-whitebg.jpg"/>
-        <br/>
-        <h2 className="login-text">Join Pictr</h2>
-        <br/>
+        <h6 className="login-text">Log in to pictr</h6>
         <form className="login-form">
-          <label>Username:
-          <br/>
+          <label>Username:</label>
           <input
-            type="text"
+            type="email"
+            value={this.state.username}
             onChange={this.update('username')}
           />
-          </label>
-          <br/>
-          <label>Password:
-          <br/>
+          <label>Password:</label>
           <input
             type="password"
+            value={this.state.password}
             onChange={this.update('password')}
           />
-          <br/>
-          <button className="session-button" onClick={this.handleSubmit}>Create Account</button>
-          <p className="sign-up">Already have an account? <Link className="link" to="/">Click Here</Link></p>
-          </label>
+          <button className="session-button" onClick={this.handleSubmit}><span className="button-text2">Create Account</span></button>
+          <p className="sign-up2">Already have an account? <Link className="link" to="/">Click Here</Link></p>
         </form>
         </div>
       </div>
