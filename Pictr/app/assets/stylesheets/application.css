@@ -14,3 +14,12 @@
  *= require_self
  */
 
+<<<<<<< HEAD
+=======
+body {
+  color: #212124;
+  font-family: Proxima Nova,Helvetica, sans-serif;
+  line-height: 1.3;
+}
+
+>>>>>>> user-auth
