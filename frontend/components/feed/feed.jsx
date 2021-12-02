@@ -6,6 +6,31 @@ class Feed extends React.Component {
     constructor(props){
         super(props);
 
+        this.renderErors = this.renderErrors.bind(this);
+
+    }
+
+    componentDidMount() {
+        this.props.fetchAllPosts();
+    }
+
+    renderPhotos() {
+        const photos = this.props.photos;
+        if (photos.length > 0) {
+            return(
+                <ul className="photo-index">
+                    {photos.map(photo => {
+                        return(
+                            <li key={photo.id}><img src={photo.photoUrl}/></li>
+                        );
+                })}
+                </ul>
+            );
+        } else {
+            return (
+                <h6>No Recent Activity</h6>
+            )
+        }
     }
 
     render() {
@@ -20,8 +45,10 @@ class Feed extends React.Component {
                     <li className="navlink">Albums</li>
                 </ul>
                 <div className="feed">
-                    <h2>Activity feed under construction</h2>
-                    <img className="construction" src="https://media.istockphoto.com/vectors/vector-construction-cone-with-helmet-vector-id979122994?b=1&k=20&m=979122994&s=612x612&w=0&h=DNHwN6cCrfmaAoXsNkPXInZQnu-8xOGexKrYe86b7iM="></img>
+                    <h2>Activity Feed</h2>
+                    <div className="feed-index">
+                        {this.renderPhotos()}
+                    </div>
                 </div>
             </div>
         )

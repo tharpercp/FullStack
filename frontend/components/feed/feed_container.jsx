@@ -1,15 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Feed from './feed';
-import { logoutUser } from '../../actions/session';
+import { fetchAllPhotos } from '../../actions/photo';
 
-const mSTP = () => ({
-  
+const mSTP = (state) => ({
+  photos: Object.values(state.entities.photos)
 });
 
 const mDTP = dispatch => ({
-  resetErrors: () => dispatch(resetSessionErrors()),
-  logout: () => dispatch(logoutUser())
+    fetchAllPhotos: () => dispatch(fetchAllPhotos()),
 });
 
-export default connect(null, mDTP)(Feed);
+export default connect(mSTP, mDTP)(Feed);
