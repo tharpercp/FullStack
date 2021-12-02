@@ -5,3 +5,15 @@ export const postPhoto = photo => (
         data: { photo },
     })
 );
+
+export const fetchAllPhotos = () => (
+    $.ajax({
+        url: '/api/photos',
+    })
+);
+
+export const fetchAllUserPhotos = userId => (
+    $.ajax({
+        url: `api/users/${userId}/photos`,
+    })
+);

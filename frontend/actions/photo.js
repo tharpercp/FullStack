@@ -7,23 +7,11 @@ const receiveAllPhotos = (photos) => ({
     photos
 })
 
-const receivePhoto = (photo) => ({
-    type: RECEIVE_PHOTO,
-    photo
-})
-
-export const fetchAlbumPhotos = (userId, albumId) => (dispatch) => {
-    return PhotoAPIUtil.fetchAlbumPhotos(userId, albumId)
-        .then((photos) => dispatch(receiveAllPhotos(photos)),
-}
-
-export const fetchUserPhotos = (userId) => (dispatch) => {
-    return PhotoAPIUtil.fetchUserPhotos(userId)
-        .then((photos) => dispatch(receiveAllPhotos(photos)),
-}
-
-
 export const fetchAllPhotos = () => (dispatch) => {
     return PhotoAPIUtil.fetchAllPhotos()
         .then((photos) => dispatch(receiveAllPhotos(photos));
 };
+
+export const fetchAllUserPhotos = user => dispatch => {
+    
+}
