@@ -29,7 +29,7 @@ class signupForm extends React.Component {
   }
 
   renderErrors() {
-    const errors = Object.values(this.props.errors)
+    const errors = Object.values(this.props.errors);
     if (errors.length > 0) {
       return(
         <ul>
