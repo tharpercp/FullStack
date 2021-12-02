@@ -9,12 +9,6 @@ export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const CLEAR_SESSION_ERRORS = 'CLEAR_SESSION_ERRORS';
-export const RECEIVE_PHOTO = 'RECEIVE_PHOTO';
-
-const receivePhoto = photo => ({
-    type: RECEIVE_PHOTO,
-    photo,
-})
 
 const receiveCurrentUser = user => ({
     type: RECEIVE_CURRENT_USER,
@@ -55,7 +49,3 @@ export const resetSessionErrors = () => dispatch => {
     dispatch(clearErrors());
 };
 
-export const createPhoto = photo => dispatch => {
-    return  postPhoto(photo)
-        .then(photo => dispatch(receivePhoto(photo)));
-};
