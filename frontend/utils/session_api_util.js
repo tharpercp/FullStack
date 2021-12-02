@@ -23,8 +23,16 @@ export const logout = () => (
 
 export const postPhoto = photo => (
     $.ajax({
-        url: 'api/photo',
+        url: 'api/photos',
         method: 'POST',
         data: { photo },
+    })
+);
+
+export const fetchAllPhotos = userId => (
+    $.ajax({
+        url: 'api/photos',
+        method: 'GET',
+        data: { userId },
     })
 );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createPhoto } from '../../actions/session';
-import Photo from './photo'
+import Photo from './photo_index'
 
 const mSTP = () => ({
   
