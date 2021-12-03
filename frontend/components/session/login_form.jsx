@@ -13,6 +13,7 @@ class loginForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.update = this.update.bind(this);
   }
 
   componentDidMount (){
@@ -27,7 +28,8 @@ class loginForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state).then(() => this.props.history.push('/feed'));
+    const user = Object.assign({}, this.state);
+    this.props.processForm(user);
   }
 
   demoLogin(e) {
@@ -35,16 +37,16 @@ class loginForm extends React.Component {
     this.props.processForm({
       username: 'tyler',
       password: 'password',
-    }).then(() => this.props.history.push('/feed'));
+    });
   }
 
   renderErrors() {
-    const errors = Object.values(this.props.errors)
+    const errors = Object.values(this.props.errors);
     if (errors.length > 0) {
       return(
         <ul>
-          {errors.map(error => (
-            <li>
+          {errors.map((error, i) => (
+            <li key={i}>
               <p className="error">{error}</p>
             </li>
           ))}
@@ -71,7 +73,7 @@ class loginForm extends React.Component {
         <form className="login-form">
           <label>Username:</label>
           <input
-            type="email"
+            type="text"
             value={this.state.username}
             onChange={this.update('username')}
           />

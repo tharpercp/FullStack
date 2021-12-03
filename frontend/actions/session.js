@@ -10,21 +10,21 @@ export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const CLEAR_SESSION_ERRORS = 'CLEAR_SESSION_ERRORS';
 
 
-const receiveCurrentUser = user => ({
+export const receiveCurrentUser = user => ({
     type: RECEIVE_CURRENT_USER,
-    user,
+    user
 });
 
-const logoutCurrentUser = () => ({
+export const logoutCurrentUser = () => ({
     type: LOGOUT_CURRENT_USER,
 });
 
-const receiveErrors = errors => ({
+export const receiveErrors = errors => ({
     type: RECEIVE_SESSION_ERRORS,
     errors,
 });
 
-const clearErrors = () => ({
+export const clearErrors = () => ({
     type: CLEAR_SESSION_ERRORS,
 });
 
