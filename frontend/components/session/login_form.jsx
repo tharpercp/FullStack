@@ -27,7 +27,7 @@ class loginForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state).then(() => this.props.history.push('/feed'));
+    this.props.processForm(this.state);
   }
 
   demoLogin(e) {
@@ -35,7 +35,7 @@ class loginForm extends React.Component {
     this.props.processForm({
       username: 'tyler',
       password: 'password',
-    }).then(() => this.props.history.push('/feed'));
+    });
   }
 
   renderErrors() {
@@ -43,8 +43,8 @@ class loginForm extends React.Component {
     if (errors.length > 0) {
       return(
         <ul>
-          {errors.map(error => (
-            <li>
+          {errors.map((error, i) => (
+            <li key={i}>
               <p className="error">{error}</p>
             </li>
           ))}
