@@ -44,10 +44,15 @@ class Feed extends React.Component {
                         <li className="navlink" onClick={() => this.props.logout()}><Link to="/" className="links">Logout</Link></li>
                         <li className="navlink">Albums</li>
                     </ul>
-                    <h2>Activity Feed</h2>
                     <div className="feed">
-                       {this.renderPhotos()}
-                    </div>
+                        <ul className="images">
+                            {this.props.photos.map(photo => {
+                                return (
+                                    <li src={photo.photo_url}
+                                )
+                            })}
+                        </ul>
+                    </div>       
                 </div>
             )
     }

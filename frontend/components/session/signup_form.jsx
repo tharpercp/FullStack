@@ -38,7 +38,7 @@ class signupForm extends React.Component {
         <img className="background" src="https://i.ibb.co/pXvJbpj/pictr-backdrop.jpg"/>
         <div className="session-form">
         <img className="logo" src="https://i.ibb.co/28zgMwN/Logo-whitebg.jpg"/>
-        <h6 className="login-text">Log in to pictr</h6>
+        <h6 className="login-text">Sign up for pictr</h6>
         <form className="login-form">
           <label>Username:</label>
           <input
