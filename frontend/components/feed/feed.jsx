@@ -45,13 +45,7 @@ class Feed extends React.Component {
                         <li className="navlink">Albums</li>
                     </ul>
                     <div className="feed">
-                        <ul className="images">
-                            {this.props.photos.map(photo => {
-                                return (
-                                    <li src={photo.photo_url}
-                                )
-                            })}
-                        </ul>
+                        {this.renderPhotos()}
                     </div>       
                 </div>
             )
