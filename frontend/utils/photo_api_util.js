@@ -1,8 +1,10 @@
-export const postPhoto = photo => (
+export const postPhoto = (photo, userId) => (
     $.ajax({
-        url: 'api/photo',
+        url: `api/users/${userId}/photos`,
         method: 'POST',
         data: { photo },
+        processData: false,
+        contentType: false,
     })
 );
 

@@ -12,6 +12,11 @@ class PostPhoto extends React.Component {
             photoFile: null,
             awsURL: null,
         }
+
+        this.handleBody = this.handleBody.bind(this);
+        this.handleFile = this.handleFile.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+
     }
 
     handleFile(e) {
@@ -37,21 +42,23 @@ class PostPhoto extends React.Component {
         formData.append('photo[user_id]', this.state.user_id);
         formData.append('photo[album_id]', this.state.album_id);
         formData.append('photo[img_url]', this.state.img_url);
+        formData.append('photo[body]', this.state.body);
         if (this.state.photoFile) {
             formData.append('photo[photo]', this.state.photoFile);
         }
-
-        this.props.postPhoto(formData);
+        this.props.postPhoto(formData).then((res) => {
+            this.props.history.push('/feed');
+        });
     }
 
     render () {
         return (
             <div className="post-photo-container">
                 <form onSubmit={this.handleSubmit}>
-                    <label for="post-photo-button">Select a Photo
+                    <label htmlFor="post-photo-button">Select a Photo
                         <input className="post-photo-button" type="file" onChange={this.handleFile} />
                     </label>
-                    <label for="photo-form-body">Post Body (optional)
+                    <label htmlFor="photo-form-body">Post Body (optional)
                         <input className="post-form-body" type="text" onChange={this.handleBody} />
                     </label>
                     <button type="submit">Create Post</button>
