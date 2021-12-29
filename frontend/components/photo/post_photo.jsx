@@ -41,7 +41,7 @@ class PostPhoto extends React.Component {
         const formData = new FormData();
         formData.append('photo[user_id]', this.state.user_id);
         formData.append('photo[album_id]', this.state.album_id);
-        formData.append('photo[img_url]', this.state.img_url);
+        formData.append('photo[img_url]', this.state.awsURL);
         formData.append('photo[body]', this.state.body);
         if (this.state.photoFile) {
             formData.append('photo[photo]', this.state.photoFile);

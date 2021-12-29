@@ -2,7 +2,7 @@ export const postPhoto = (photo, userId) => (
     $.ajax({
         url: `api/users/${userId}/photos`,
         method: 'POST',
-        data: { photo },
+        data:  photo,
         processData: false,
         contentType: false,
     })
