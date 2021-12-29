@@ -1,10 +1,16 @@
-import { fetchAllPhotos, fetchAllUserPhotos } from "../utils/photo_api_util"; 
+import { fetchAllPhotos, fetchAllUserPhotos, postPhoto } from "../utils/photo_api_util"; 
 
 export const RECEIVE_ALL_PHOTOS = "RECEIVE_ALL_PHOTOS";
+export const RECEIVE_PHOTO_ERRORS = "RECEIVE_PHOTO_ERRORS";
 
 const receiveAllPhotos = (photos) => ({
     type: RECEIVE_ALL_PHOTOS,
     photos
+})
+
+const receivePhotoErrors = (errors) => ({
+    type: RECEIVE_PHOTO_ERRORS,
+    errors
 })
 
 export const allPhotos = () => dispatch => {
@@ -15,5 +21,11 @@ export const allPhotos = () => dispatch => {
 export const allUserPhotos = () => dispatch => {
     return fetchAllUserPhotos()
         .then(photos => dispatch(receiveAllPhotos(photos)));
+};
+
+export const createPhoto = (photo) => (dispatch) => {
+    return postPhoto(photo)
+        .then((photo) => dispatch(receivePhoto(photo)),
+            errors => dispatch(receivePhotoErrors(errors.responseJSON)));
 };
 

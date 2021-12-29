@@ -11,7 +11,7 @@ class Feed extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchAllPosts();
+        this.props.fetchAllPhotos();
     }
 
     renderPhotos() {
@@ -37,11 +37,12 @@ class Feed extends React.Component {
             return (
                 <div className="home-page">
                     <ul className="navbar">
-                        <li><img className="logo" src="https://i.ibb.co/C7SG390/logo-blackbg.jpg"/></li>
-                        <li><strong className="logo-text">pictr</strong></li>
-                        <li className="navlink">Photos</li>
+                        <li><div className="first-dot"></div></li>
+                        <li><div className="second-dot"></div></li>
+                        <li><div className="logo-text">pictr</div></li>
+                        <Link className="navlink" to="/create">Photo</Link>
                         <li className="navlink">Account</li>
-                        <li className="navlink" onClick={() => this.props.logout()}><Link to="/" className="links">Logout</Link></li>
+                        <li className="navlink" onClick={() => this.props.logout()}>Logout</li>
                         <li className="navlink">Albums</li>
                     </ul>
                     <div className="feed">
