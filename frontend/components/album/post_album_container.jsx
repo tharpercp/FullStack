@@ -1,17 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PostAlbum from './post_album';
-import { allPhotos } from '../../actions/photo';
+import { allUserAlbums, createAlbum } from '../../actions/album';
 
 
 const mSTP = (state) => ({
-  photos: Object.values(state.entities.photos),
-  currentUser: state.entities.users[state.session.currentUser]
+  currentUser: state.entities.users[state.session.currentUser],
 });
 
 const mDTP = dispatch => ({
-  fetchAllPhotos: () => dispatch(allPhotos()),
-  logout: () => dispatch(logoutUser())
+  createAlbum: (album) => dispatch(createAlbum(album))
 });
 
-export default connect(mSTP, mDTP)(Feed);
+export default connect(mSTP, mDTP)(PostAlbum);
