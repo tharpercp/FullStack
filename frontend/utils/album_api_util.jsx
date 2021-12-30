@@ -5,6 +5,13 @@ export const fetchUserAlbums = (userId) => (
     })
 );
 
+export const fetchAllAlbums = () => (
+    $.ajax({
+        method: "GET",
+        url: '/api/albums'
+    })
+)
+
 export const fetchAlbum = (id) => (
     $.ajax({
         method: "GET",
