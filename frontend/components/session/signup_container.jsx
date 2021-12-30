@@ -9,7 +9,7 @@ const mSTP = ({ errors }) => ({
 
 const mDTP = dispatch => ({
     processForm: formUser => dispatch(createNewUser(formUser)),
-    resetErrors: () => dispatch(resetSessionErrors())
+    resetErrors: () => dispatch(resetSessionErrors()),
 });
 
 export default connect(mSTP, mDTP)(signupForm);

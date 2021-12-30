@@ -13,6 +13,7 @@ class loginForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.update = this.update.bind(this);
   }
 
   componentDidMount (){
@@ -27,7 +28,8 @@ class loginForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state);
+    const user = Object.assign({}, this.state);
+    this.props.processForm(user);
   }
 
   demoLogin(e) {
@@ -39,7 +41,7 @@ class loginForm extends React.Component {
   }
 
   renderErrors() {
-    const errors = Object.values(this.props.errors)
+    const errors = Object.values(this.props.errors);
     if (errors.length > 0) {
       return(
         <ul>
@@ -66,12 +68,12 @@ class loginForm extends React.Component {
         </ul>
         <img className="background" src="https://i.ibb.co/pXvJbpj/pictr-backdrop.jpg"/>
         <div className="session-form">
-        <img className="logo" src="https://i.ibb.co/28zgMwN/Logo-whitebg.jpg"/>
+        <img className="logo" src="https://i.ibb.co/ZR9RYhr/Logo-whitebg.jpg"/>
         <h6 className="login-text">Log in to pictr</h6>
         <form className="login-form">
           <label>Username:</label>
           <input
-            type="email"
+            type="text"
             value={this.state.username}
             onChange={this.update('username')}
           />

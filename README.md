@@ -1,7 +1,6 @@
-# README
+# pictr
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Pictr is a clone of the popular photo sharing website, Flickr. 
 
 Things you may want to cover:
 

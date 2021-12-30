@@ -1,30 +1,55 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
 
 class Feed extends React.Component {
     constructor(props){
         super(props);
 
+
+    }
+
+    componentDidMount() {
+        this.props.fetchAllPhotos();
+    }
+
+    renderPhotos() {
+        const photos = this.props.photos;
+        if (photos.length > 0) {
+            return(
+                <ul className="images">
+                    {photos.map(photo => {
+                        return(
+                            <li key={photo.id}><img src={photo.photoUrl}/></li>
+                        );
+                })}
+                </ul>
+            );
+        } else {
+            return (
+                <h6>No Recent Activity</h6>
+            )
+        }
     }
 
     render() {
-        return (
-            <div className="home-page">
-                <ul className="navbar">
-                    <li><img className="logo" src="https://i.ibb.co/C7SG390/logo-blackbg.jpg"/></li>
-                    <li><strong className="logo-text">pictr</strong></li>
-                    <li className="navlink"><Link to="/photo/new" className="links">Photos</Link></li>
-                    <li className="navlink"><Link to="/account" className="links">Account</Link></li>
-                    <li className="navlink" onClick={() => this.props.logout()}><Link to="/" className="links">Logout</Link></li>
-                    <li className="navlink">Albums</li>
-                </ul>
-                <div className="feed">
-                    <h2>Activity feed under construction</h2>
-                    <img className="construction" src="https://media.istockphoto.com/vectors/vector-construction-cone-with-helmet-vector-id979122994?b=1&k=20&m=979122994&s=612x612&w=0&h=DNHwN6cCrfmaAoXsNkPXInZQnu-8xOGexKrYe86b7iM="></img>
+            return (
+                <div className="home-page">
+                    <ul className="navbar">
+                        <li><div className="first-dot"></div></li>
+                        <li><div className="second-dot"></div></li>
+                        <li><div className="logo-text">pictr</div></li>
+                        <Link className="navlink" to="/create">Photo</Link>
+                        <li className="navlink">Account</li>
+                        <li className="navlink">Albums</li>
+                        <li className="navlink" onClick={() => this.props.logout()}>Logout</li>
+                    </ul>
+                    <div className="feed">
+                        {this.renderPhotos()}
+                    </div>       
                 </div>
-            </div>
-        )
+            )
     }
 };
 
