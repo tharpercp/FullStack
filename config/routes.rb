@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       end
 
       resources :photos do 
-        resources :comments, only: [:index, :show]
+        resources :comments, only: [:index, :create, :show]
       end
     end
     
