@@ -9,6 +9,9 @@ Rails.application.routes.draw do
         resources :albums, only: [:index]
       end
 
+      resources :photos do 
+        resources :comments, only: [:index, :show]
+      end
     end
     
     root to: 'static_pages#root'
