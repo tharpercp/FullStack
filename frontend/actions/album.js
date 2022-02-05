@@ -29,10 +29,10 @@ export const allUserAlbums = (id) => dispatch => {
         .then(albums => dispatch(receiveAllPhotos(albums)));
 };
 
-export const createAlbum = (album) => (dispatch) => {
+export const postAlbum = (album) => (dispatch) => {
     return createAlbum(album)
-        .then((album) => dispatch(receiveAlbum(album)),
-            errors => dispatch(receiveAlbumErrors(errors.responseJSON)));
+        .then((album) => dispatch(receiveAlbum(album)))
+            // errors => dispatch(receiveAlbumErrors(errors.responseJSON)));
 };
 
 export const showAlbum = (albumId) => (dispatch) => {

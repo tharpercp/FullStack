@@ -1,5 +1,5 @@
 import React from 'react';
-import { RECEIVE_USER_ALBUMS, RECEIVE_ALBUM } from '../actions/album_actions';
+import { RECEIVE_USER_ALBUMS, RECEIVE_ALBUM } from '../actions/album';
 
 const albumReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
