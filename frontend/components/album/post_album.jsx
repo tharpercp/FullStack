@@ -6,6 +6,18 @@ class PostAlbum extends React.Component {
     }
 
 
+    renderPhotoOptions () {
+        const photos = this.props.photos
+
+        return (
+            photos.map(photo =>
+                    <div className="photo-option">
+                        <a href={photo.link}></a>
+                    </div>
+                )
+            )
+    }
+
     render () {
         return (
             <div className="create-album">
@@ -17,7 +29,7 @@ class PostAlbum extends React.Component {
                         <input type="text"></input>
                     </label>
                     <div className="scroll-menu-photo">
-                        
+                        {this.renderPhotoOptions}
                     </div>
                 </form>
 
