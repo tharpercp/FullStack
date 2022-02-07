@@ -46,7 +46,9 @@ class Feed extends React.Component {
                         <li className="navlink" onClick={() => this.props.logout()}>Logout</li>
                     </ul>
                     <div className="feed">
-                        {this.renderPhotos()}
+                        <div className="feed-container">
+                            {this.renderPhotos()}
+                        </div>
                     </div>       
                 </div>
             )

@@ -16,7 +16,11 @@ class PostAlbum extends React.Component {
                     <label htmlFor="body">Description
                         <input type="text"></input>
                     </label>
+                    <div className="scroll-menu-photo">
+                        
+                    </div>
                 </form>
+
             </div>
 
         )
