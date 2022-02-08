@@ -6,6 +6,7 @@ import { allUserAlbums, createAlbum } from '../../actions/album';
 
 const mSTP = (state) => ({
   currentUser: state.entities.users[state.session.currentUser],
+  photos: state.entities.photos,
 });
 
 const mDTP = dispatch => ({
