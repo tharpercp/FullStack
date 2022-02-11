@@ -54,7 +54,7 @@ class PostPhoto extends React.Component {
     render () {
         return (
             <div className="post-photo-container">
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} className="post-photo-form">
                     <label htmlFor="post-photo-button">Select a Photo
                         <input className="post-photo-button" type="file" onChange={this.handleFile} />
                     </label>

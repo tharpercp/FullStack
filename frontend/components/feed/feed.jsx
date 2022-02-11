@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-
+import photo from '../../../app/assets/images/seed/22.jpg'
 
 class Feed extends React.Component {
     constructor(props){
@@ -25,9 +25,66 @@ class Feed extends React.Component {
                 })}
                 </ul>
             );
+
         } else {
+            
             return (
-                <h6>No Recent Activity</h6>
+                <div className="horizontal-feed-container">
+                    <div className="horizontal-feed">
+                        <div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={photo}></img>
+                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                        </div>
+                        <div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={photo}></img>
+                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                        </div><div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={photo}></img>
+                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                        </div><div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={photo}></img>
+                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                        </div><div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={photo}></img>
+                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                        </div><div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={photo}></img>
+                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                        </div>
+                        <div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={photo}></img>
+                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                        </div>
+                        <div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={photo}></img>
+                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                        </div>
+                        <div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={photo}></img>
+                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                        </div>
+                        <div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={photo}></img>
+                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                        </div>
+                        <div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={photo}></img>
+                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                        </div>
+                        <div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={photo}></img>
+                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                        </div>
+                        <div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={photo}></img>
+                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                        </div>
+                        <div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={photo}></img>
+                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                        </div>
+                    </div>
+                </div>
             )
         }
     }
@@ -44,10 +101,12 @@ class Feed extends React.Component {
                         <li className="navlink">Albums</li>
                         <li className="navlink" onClick={() => this.props.logout()}>Logout</li>
                     </ul>
+                    <h1 className="feed-title">Your Recent Activity</h1>
                     <div className="feed">
                         <div className="feed-container">
                             {this.renderPhotos()}
                         </div>
+                    </div>       
                     </div>       
                 </div>
             )
