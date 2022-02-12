@@ -8,13 +8,10 @@
     flex-direction: column;
     align-items: stretch;
     position: fixed;
-    width: 250px;
-    height:250px;
+    width: 50vh;
+    height:50vh;
     top: 50%;
     left: 50%;
-    margin-top: -100px;
-    margin-left: -100px;
-    padding-left: 15px;
     background-color: rgb(253, 253, 253);
     border-radius: 2px;
 }
@@ -30,8 +27,6 @@
     text-transform: none;
     height: 18px;
     width: 150px;
-    margin-left: 30px;
-    margin-top: 5px;
 }
 
 .button-text {
@@ -39,8 +34,6 @@
     font-weight: 500;
     background-color: #128fdc;
     color: white;
-    margin-left: 60px;
-    margin-bottom: 5px;
 }
 
 body, html {
@@ -72,8 +65,6 @@ ul img {
     width: 15px;
     background-color: rgb(32, 32, 32);
     text-decoration: none;
-    margin-top: 6px;
-    margin-left: 14px;
 }
 
 ul li {
@@ -86,16 +77,12 @@ li strong {
     color: white;
     background-color: rgb(32, 32, 32);
     font-weight: 700;
-    margin-top: -18px;
     font-size: 14px;
 }
 
 .login-text {
     align-self: center;
-    font-weight: 400;
     font-size: 14px;
-    margin-top: -5px;
-    margin-left: -15px;
 }
 
 
@@ -103,20 +90,14 @@ li strong {
     height: 25px;
     width: 40px;
     align-self: center;
-    margin-left: -17px;
 }
 
 .sign-up {
-    font-size: xx-small;
     padding: 10px;
-    margin-left: 45px;
-
 }
 
 .sign-up2 {
-    font-size: xx-small;
     padding: 10px;
-    margin-left: 40px;
 }
 
 .link {
@@ -129,7 +110,6 @@ li strong {
     width: 210px;
     height: 30px;
     border: .5px solid grey;
-    margin-left: 12px;
 }
 
 .login-form label {
@@ -138,7 +118,6 @@ li strong {
     background-color: transparent;
     font-size: 8px;
     position: absolute;
-    margin-left: 14px;
 } 
 
 .error {
@@ -152,6 +131,4 @@ li strong {
     font-weight: 500;
     background-color: #128fdc;
     color: white;
-    margin-left: 40px;
-    margin-bottom: 7px;
 }
