@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import photo from '../../../app/assets/images/seed/22.jpg'
+import NavContainer from '../nav/nav_container'
 
 class Feed extends React.Component {
     constructor(props){
@@ -92,23 +93,14 @@ class Feed extends React.Component {
     render() {
             return (
                 <div className="home-page">
-                    <ul className="navbar">
-                        <li><div className="first-dot"></div></li>
-                        <li><div className="second-dot"></div></li>
-                        <li><div className="logo-text">pictr</div></li>
-                        <Link className="navlink" to="/create">Photo</Link>
-                        <li className="navlink">Account</li>
-                        <li className="navlink">Albums</li>
-                        <li className="navlink" onClick={() => this.props.logout()}>Logout</li>
-                    </ul>
+                    <NavContainer />
                     <h1 className="feed-title">Your Recent Activity</h1>
                     <div className="feed">
                         <div className="feed-container">
                             {this.renderPhotos()}
                         </div>
                     </div>       
-                    </div>       
-                </div>
+                </div>       
             )
     }
 };

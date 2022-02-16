@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import Background from './background'
+import EmptyNav from '../nav/empty_nav'
 
 class loginForm extends React.Component {
   constructor(props) {
@@ -62,33 +63,34 @@ class loginForm extends React.Component {
   render() {
     return (
       <div>
-        <ul className="emptynav">
-            <li><img id="logo" src="https://i.ibb.co/C7SG390/logo-blackbg.jpg"/></li>
-            <li><strong>pictr</strong></li>
-        </ul>
-        <img className="background" src="https://i.ibb.co/pXvJbpj/pictr-backdrop.jpg"/>
-        <div className="session-form">
-        <img className="logo" src="https://i.ibb.co/ZR9RYhr/Logo-whitebg.jpg"/>
-        <h6 className="login-text">Log in to pictr</h6>
-        <form className="login-form">
-          <label>Username:</label>
-          <input
-            type="text"
-            value={this.state.username}
-            onChange={this.update('username')}
-          />
-          <label>Password:</label>
-          <input
-            type="password"
-            value={this.state.password}
-            onChange={this.update('password')}
-          />
-          <button className="session-button" onClick={this.handleSubmit}><span className="button-text">Sign in</span></button>
-          <button className="session-button" onClick={this.demoLogin}><span className="button-text">Demo</span></button>
-          <div className="errors-container">{this.renderErrors()}</div>
-          <p className="sign-up">New to Pictr? <Link className="link" to="/signup">Sign up here</Link></p>
-        </form>
+        <EmptyNav />
+        <div className="background-div">
+          <Background />
         </div>
+        <div className="session-form">
+          <img className="logo" src="https://i.ibb.co/ZR9RYhr/Logo-whitebg.jpg"/>
+          <form className="login-form">
+            <div className="login-text">Log in</div>
+            <label htmlFor="username" className="session-label">Username</label>
+            <input
+              type="text"
+              value={this.state.username}
+              onChange={this.update('username')}
+              htmlFor="username"
+            />
+            <label htmlFor="password" className="session-label">Password</label>
+            <input
+              type="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              htmlFor="password"
+            />
+            <button className="session-button" onClick={this.handleSubmit}><span className="button-text">Sign in</span></button>
+            <button className="session-button" onClick={this.demoLogin}><span className="button-text">Demo</span></button>
+            <div className="errors-container">{this.renderErrors()}</div>
+            <p className="sign-up">New to Pictr? <Link className="link" to="/signup">Sign up here</Link></p>
+          </form>
+          </div>
       </div>
     );
   }

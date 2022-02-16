@@ -1,10 +1,16 @@
-.navbar {
-    overflow: hidden;
-    background-color: rgb(32, 32, 32);
-    width: 100%;
-    height: 50px;
-    box-shadow: 10px 0px 10px grey;
+.root {
     display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    background-color: black;
+    display: flex;
+    position: absolute fixed;
+    box-shadow: 10px 10px 10px 10px grey;
+    z-index: 2;
+    min-height: 5vh;
+    justify-content: space-between;
 }
 
 .body {
@@ -33,27 +39,34 @@
 }
 
 .navlink {
-    background-color: rgb(32, 32, 32);
+    background-color: black;
     padding: 10px;
     font-weight: 500;
     color: #f2f2f2;
-}
-
-.construction {
-    height: 400px;
-    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .logo-text {
     color: white;
-    background-color: rgb(32, 32, 32);
-    margin-left: -30px;
-    margin-top: -7px;
+    background-color: black;
     position: absolute;
     font-weight: 700;
     text-shadow: .5px .5px grey;
     font-size: 24px;
+    margin-left: 2vh;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: flex-start;
+    min-width: 100px;
+    background-color: black;
+    float: left;
 }
 
 .first-dot {
@@ -63,8 +76,7 @@
     border-radius: 50%;
     width: 10px;
     height: 10px;
-    margin-top: 5px;
-    margin-left: 7px;
+    margin-left: -7vh;
 }
 
 .second-dot {
@@ -74,8 +86,7 @@
     border: 1px solid black;
     width: 10px;
     height: 10px;
-    margin-left: -12px;
-    margin-top: 5px;
+    margin-left: -5vh;
 }
 
 .horizontal-feed {
