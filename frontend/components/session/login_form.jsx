@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Background from './background'
 import EmptyNav from '../nav/empty_nav'
+import Logo from '../nav/logo'
 
 class loginForm extends React.Component {
   constructor(props) {
@@ -68,9 +69,12 @@ class loginForm extends React.Component {
           <Background />
         </div>
         <div className="session-form">
-          <img className="logo" src="https://i.ibb.co/ZR9RYhr/Logo-whitebg.jpg"/>
           <form className="login-form">
             <div className="login-text">Log in</div>
+            <div className="dots-container">
+                <div className="mini-first-dot"></div>
+                <div className="mini-second-dot"></div>
+            </div>
             <label htmlFor="username" className="session-label">Username</label>
             <input
               type="text"
