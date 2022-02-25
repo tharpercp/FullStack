@@ -29,7 +29,7 @@ class PostAlbum extends React.Component {
                         <input type="text"></input>
                     </label>
                     <div className="scroll-menu-photo">
-                        {this.renderPhotoOptions}
+                        {this.renderPhotoOptions()}
                     </div>
                 </form>
 

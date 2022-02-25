@@ -4,9 +4,14 @@ Rails.application.routes.draw do
       resource :session, only: [:create, :destroy]
       resources :users, only: [:create]
       resources :albums, only: [:index, :create, :show]
+      resources :photos do 
+        resources :comments
+        resources :likes
+      end
       resources :users do
         resources :photos, only: [:index, :show, :create]
         resources :albums, only: [:index]
+        resources :comments, only: [:index]
       end
 
     end

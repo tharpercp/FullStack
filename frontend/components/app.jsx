@@ -5,6 +5,8 @@ import LoginContainer from './session/login_container';
 import FeedContainer from './feed/feed_container';
 import { AuthRoute, ProtectedRoute } from '../utils/route_utils';
 import PostPhotoContainer from "./photo/post_photo_container";
+import AccountContainer from "./account/account_container"
+import PhotoShow from "./photo/photo_show"
 
 const App = () => (
     <div>
@@ -13,6 +15,8 @@ const App = () => (
             <AuthRoute exact path="/signup" component={SignupContainer}/>
             <ProtectedRoute path="/feed" component={FeedContainer} />
             <ProtectedRoute path="/create" component={PostPhotoContainer} />
+            <ProtectedRoute path="/account" component={AccountContainer} />
+            <ProtectedRoute path="/photo/1232098239" component={PhotoShow} />
         </Switch>
     </div>
 ); 

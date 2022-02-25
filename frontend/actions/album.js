@@ -31,8 +31,8 @@ export const allUserAlbums = (id) => dispatch => {
 
 export const postAlbum = (album) => (dispatch) => {
     return createAlbum(album)
-        .then((album) => dispatch(receiveAlbum(album)))
-            // errors => dispatch(receiveAlbumErrors(errors.responseJSON)));
+        .then((album) => dispatch(receiveAlbum(album)),
+            errors => dispatch(receiveAlbumErrors(errors.responseJSON)));
 };
 
 export const showAlbum = (albumId) => (dispatch) => {

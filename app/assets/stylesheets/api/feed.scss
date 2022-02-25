@@ -20,9 +20,10 @@
     justify-content: center;
     align-items: center;
     font-weight: 600;
-    padding-top: 5vh;
-    padding-bottom: 2.5vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
     color: grey;
+    z-index: 999999;
 }
 
 .navlink {
@@ -39,16 +40,18 @@
     z-index: 5;
 }
 
-.navlink:hover {
+.navlink-open {
     color: white;
     background-color: black;
 }
+
+
 
 .navlink-hidden {
     background-color: transparent;
     padding: 10px;
     font-weight: 500;
-    color: white;
+    color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,10 +59,6 @@
     z-index: 5;
 }
 
-.navlink-hidden:hover {
-    background-color: grey;
-    color: black;
-}
 
 
 .logo-text {
@@ -110,7 +109,16 @@
     grid-auto-columns: 30%;
     overflow-x: auto;
     overflow-y: hidden;
-    padding-bottom: 5vh;
+}
+
+.horizontal-update {
+    width: 80vh;
+    height: 40vh;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 30%;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .horizontal-feed-container {
@@ -142,6 +150,16 @@
     transition: .5s ease;
 }
 
+.horizontal-update-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: transparent;
+    z-index: 10;
+    padding: 15px;
+}
+
 .horizontal-feed-item:hover {
     transform: scale(1.1);
     -webkit-transform: scale(1.1);
@@ -157,10 +175,8 @@
     color: black;
     font-size: 12px;
 }
-
 .browse {
     width: 90%;
-    height: 100%;
     margin: 0 auto;
 }
 
@@ -168,6 +184,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 40vh;
 }
 
 .user-modal {
@@ -185,30 +202,39 @@
 
 .username {
     display: flex;
+    font-size: 12px;
     justify-content: center;
     align-items: center;
+    font-weight: 800;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    padding: 1vh;
 }
 
 
 .view-profile-button {
-    background-color: lightcyan;
-    padding: 10px 25px 10px 25px;
+    background-color: lightskyblue;
+    padding: 2px;
     color: black;
     font-size: 10px;
     text-align: center;
-    font-weight: 800;
-    border: 2px solid black;
+    height: 30%;
+    border: 1px solid grey;
     border-radius: 2px;
+    margin: 0 auto;
 
 }
 
 .user-feed-info {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    max-height: 5vh;
-    padding-top: 1vh;
-    width: 100%;
+    justify-content: center;
+    height: 5vh;
+    width: 20vh;
+    padding: 1vh;
 }
 
 .horizontal-feed-img {
@@ -238,4 +264,14 @@
     border: 1px solid black;
     width: 10px;
     height: 10px;
+}
+
+.member-since {
+    font-size: 8px;
+    color: black;
+}
+
+.navlink:hover + .navlink-open + .navlink-hidden {
+    color: white;
+    background-color: black;
 }

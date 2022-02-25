@@ -41,40 +41,71 @@ class Feed extends React.Component {
         return (
 
         <div className="horizontal-feed-container">
-                    <div className="horizontal-feed">
-                        <div className="horizontal-feed-item">
+                    <div className="horizontal-update">
+                        <div className="horizontal-update-item">
                             <img className="horizontal-feed-img" src={m}></img>
                             <div className="user-feed-info">
                                 <div className="user-modal">T</div>
-                                <div className="username">Tyler</div>
-                                <div className="view-profile-button">profile</div>
+                                <div className="user-details">
+                                    <div className="username">Tyler</div>
+                                    <div className="member-since"> 45 photos | 2 Albums </div>
+                                </div>
+                
                             </div>
                         </div>
-                        <div className="horizontal-feed-item">
+                        <div className="horizontal-update-item">
                             <img className="horizontal-feed-img" src={n}></img>
-                            <div className="user-modal">T</div>
-                            <div className="username">Tyler</div>
-                            <div className="view-profile-button"></div>
-                        </div><div className="horizontal-feed-item">
+                            <div className="user-feed-info">
+                                <div className="user-modal">A</div>
+                                <div className="user-details">
+                                    <div className="username">Alexandra</div>
+                                    <div className="member-since"> 28 photos | 4 Albums </div>
+                                </div>
+                
+                            </div>
+                        </div>
+                        <div className="horizontal-update-item">
                             <img className="horizontal-feed-img" src={o}></img>
-                            <div className="user-modal">T</div>
-                            <div className="username">Tyler</div>
-                            <div className="view-profile-button"></div>
-                        </div><div className="horizontal-feed-item">
+                            <div className="user-feed-info">
+                                <div className="user-modal">R</div>
+                                <div className="user-details">
+                                    <div className="username">Ricky</div>
+                                    <div className="member-since"> 435 photos | 49 Albums </div>
+                                </div>
+                
+                            </div>
+                        </div>
+                        <div className="horizontal-update-item">
                             <img className="horizontal-feed-img" src={p}></img>
-                            <div className="user-modal">T</div>
-                            <div className="username">Tyler</div>
-                            <div className="view-profile-button"></div>
-                        </div><div className="horizontal-feed-item">
+                            <div className="user-feed-info">
+                                <div className="user-modal">L</div>
+                                <div className="user-details">
+                                    <div className="username">Lucy</div>
+                                    <div className="member-since"> 4 photos | 0 Albums </div>
+                                </div>
+                
+                            </div>
+                        </div>
+                        <div className="horizontal-update-item">
                             <img className="horizontal-feed-img" src={q}></img>
-                            <div className="user-modal">T</div>
-                            <div className="username">Tyler</div>
-                            <div className="view-profile-button"></div>
-                        </div><div className="horizontal-feed-item">
+                            <div className="user-feed-info">
+                                <div className="user-modal">A</div>
+                                <div className="user-details">
+                                    <div className="username">Aldon</div>
+                                    <div className="member-since"> 3 photos | 0 Albums </div>
+                                </div>
+                
+                            </div>
+                        </div>
+                        <div className="horizontal-update-item">
                             <img className="horizontal-feed-img" src={r}></img>
-                            <div className="user-modal">T</div>
-                            <div className="username">Tyler</div>
-                            <div className="view-profile-button"></div>
+                            <div className="user-feed-info">
+                                <div className="user-modal">V</div>
+                                <div className="user-details">
+                                    <div className="username">Vicky</div>
+                                    <div className="member-since"> 4556 photos | 22354 Albums </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -101,56 +132,56 @@ class Feed extends React.Component {
                 <div className="horizontal-feed-container">
                     <div className="horizontal-feed">
                         <div className="horizontal-feed-item">
-                            <img className="horizontal-feed-img" src={photo}></img>
+                            <img className="horizontal-feed-img" src={photo} onClick={() => this.props.history.push("/photo/1232098239")}></img>
                             <sub className="horizontal-feed-item-text">2  💬    |    5  👍 </sub>
                         </div>
                         <div className="horizontal-feed-item">
                             <img className="horizontal-feed-img" src={a}></img>
-                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                            <sub className="horizontal-feed-item-text">{Math.floor(Math.random() * 10)}  💬    |    {Math.floor(Math.random() * 10)}  👍</sub>
                         </div><div className="horizontal-feed-item">
                             <img className="horizontal-feed-img" src={b}></img>
-                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                            <sub className="horizontal-feed-item-text">{Math.floor(Math.random() * 10)}  💬    |    {Math.floor(Math.random() * 10)}  👍</sub>
                         </div><div className="horizontal-feed-item">
                             <img className="horizontal-feed-img" src={c}></img>
-                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                            <sub className="horizontal-feed-item-text">{Math.floor(Math.random() * 10)}  💬    |    {Math.floor(Math.random() * 10)}  👍</sub>
                         </div><div className="horizontal-feed-item">
                             <img className="horizontal-feed-img" src={d}></img>
-                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                            <sub className="horizontal-feed-item-text">{Math.floor(Math.random() * 10)}  💬    |    {Math.floor(Math.random() * 10)}  👍</sub>
                         </div><div className="horizontal-feed-item">
                             <img className="horizontal-feed-img" src={e}></img>
-                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                            <sub className="horizontal-feed-item-text">{Math.floor(Math.random() * 10)}  💬    |    {Math.floor(Math.random() * 10)}  👍</sub>
                         </div>
                         <div className="horizontal-feed-item">
                             <img className="horizontal-feed-img" src={f}></img>
-                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                            <sub className="horizontal-feed-item-text">{Math.floor(Math.random() * 10)}  💬    |    {Math.floor(Math.random() * 10)}  👍</sub>
                         </div>
                         <div className="horizontal-feed-item">
                             <img className="horizontal-feed-img" src={photo}></img>
-                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                            <sub className="horizontal-feed-item-text">{Math.floor(Math.random() * 10)}  💬    |    {Math.floor(Math.random() * 10)}  👍</sub>
                         </div>
                         <div className="horizontal-feed-item">
                             <img className="horizontal-feed-img" src={g}></img>
-                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                            <sub className="horizontal-feed-item-text">{Math.floor(Math.random() * 10)}  💬    |    {Math.floor(Math.random() * 10)}  👍</sub>
                         </div>
                         <div className="horizontal-feed-item">
                             <img className="horizontal-feed-img" src={h}></img>
-                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                            <sub className="horizontal-feed-item-text">{Math.floor(Math.random() * 10)}  💬    |    {Math.floor(Math.random() * 10)}  👍</sub>
                         </div>
                         <div className="horizontal-feed-item">
                             <img className="horizontal-feed-img" src={i}></img>
-                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                            <sub className="horizontal-feed-item-text">{Math.floor(Math.random() * 10)}  💬    |    {Math.floor(Math.random() * 10)}  👍</sub>
                         </div>
                         <div className="horizontal-feed-item">
                             <img className="horizontal-feed-img" src={j}></img>
-                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                            <sub className="horizontal-feed-item-text">{Math.floor(Math.random() * 10)}  💬    |    {Math.floor(Math.random() * 10)}  👍</sub>
                         </div>
                         <div className="horizontal-feed-item">
                             <img className="horizontal-feed-img" src={k}></img>
-                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                            <sub className="horizontal-feed-item-text">{Math.floor(Math.random() * 10)}  💬    |    {Math.floor(Math.random() * 10)}  👍</sub>
                         </div>
                         <div className="horizontal-feed-item">
                             <img className="horizontal-feed-img" src={l}></img>
-                            <sub className="horizontal-feed-item-text">A cheetah</sub>
+                            <sub className="horizontal-feed-item-text">{Math.floor(Math.random() * 10)}  💬    |    {Math.floor(Math.random() * 10)}  👍</sub>
                         </div>
                     </div>
                 </div>
