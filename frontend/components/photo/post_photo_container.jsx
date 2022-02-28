@@ -5,11 +5,6 @@ import PostPhoto from './post_photo';
 
 const mSTP = (state) => ({
     currentUser: state.entities.users[state.session.currentUser],
-    photo: {
-        album_id: "",
-        img_url: "",
-        body: "",
-    }
 
 });
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import photo from '../../../app/assets/images/seed/22.jpg'
 import NavContainer from '../nav/nav_container'
+import CommentContainer from '../comment/comment_container'
 
 class PhotoShow extends React.Component {
     constructor(props){
@@ -14,8 +15,10 @@ class PhotoShow extends React.Component {
 
     toggleLike () {
         if (this.state.like === 'white') {
+            this.props.like(this.props.photoId)
             this.setState({like: 'lightgreen'})
         } else {
+            this.props.unLike(this.props.photoId)
             this.setState({like: 'white'})
         }
     }
@@ -35,12 +38,7 @@ class PhotoShow extends React.Component {
                 <div className="photo-body">
                     <i>Photo taken on site at CCF headquarters in Otjiwarongo, Namibia. Learn more about the protection and conservation efforts at https://cheetah.org/</i>
                 </div>
-                <div className="comments-container">
-                    <ul className="comments-list">
-                       <li className="comment-item-other">Love Cheetahs! Thanks for sharing</li>
-                       <li className="comment-item-other">Great shot!</li>
-                       <li className="comment-item-self">Where can I contact you about rights to use this photo?</li>
-                    </ul>
+                <CommentContainer />
                     <textarea
                     className="comment-input"
                     rows="2"
@@ -50,7 +48,6 @@ class PhotoShow extends React.Component {
                 ></textarea>
                 <br/>
                 <button className="submit-comment">Submit</button>
-                </div>
             </div>
             <br/>
         </div>

@@ -1,0 +1,29 @@
+.account-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.account-options-container {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+.account-option {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0 auto;
+}
+
+.account-option {
+    font-size: 30px;
+    padding: 5vh;
+    margin: 5vh;
+    border: 1px solid black;
+}

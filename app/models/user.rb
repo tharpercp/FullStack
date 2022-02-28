@@ -4,7 +4,9 @@ class User < ApplicationRecord
     validates :password_digest, presence: true
     validates :session_token, presence: true, uniqueness: true
 
-    has_many :photos, :albums
+    has_many :photos
+
+    has_many :albums
 
     has_many :photo_likes,:through => :photos,:source => :likes
 

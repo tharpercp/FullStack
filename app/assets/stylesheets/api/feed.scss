@@ -6,8 +6,10 @@
 .navbar {
     background-color: black;
     display: flex;
-    position: absolute fixed;
+    position: fixed;
     z-index: 2;
+    width: 100%;
+    top: 0%;
     min-height: 5vh;
     max-height: 6vh;
     justify-content: space-between;
@@ -22,6 +24,7 @@
     font-weight: 600;
     padding-top: 2vh;
     padding-bottom: 2vh;
+    margin-top: 5vh;
     color: grey;
     z-index: 999999;
 }
@@ -79,6 +82,7 @@
     min-width: 100px;
     background-color: black;
     float: left;
+    margin-top: 20px;
 }
 
 .first-dot {

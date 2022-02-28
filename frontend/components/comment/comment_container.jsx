@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Account from './account';
 import { allComments } from '../../actions/comment';
 import { logoutUser } from '../../actions/session';
 
-const mSTP = (state) => ({
+const mSTP = (state, ownProps) => ({
   photos: Object.values(state.entities.photos),
-  currentUser: state.entities.users[state.session.currentUser]
+  currentUser: state.entities.users[state.session.currentUser],
+  photoId: ownProps.photoId
 });
 
 const mDTP = dispatch => ({

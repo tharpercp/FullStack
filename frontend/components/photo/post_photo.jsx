@@ -11,6 +11,7 @@ class PostPhoto extends React.Component {
             body: "",
             photoFile: null,
             awsURL: null,
+            showAlbum: false,
         }
 
         this.handleBody = this.handleBody.bind(this);
@@ -18,6 +19,17 @@ class PostPhoto extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
 
     }
+
+    renderAlbumOptions () {
+        if (this.state.showAlbum) {
+            return (
+            <label htmlFor="album-name">Album Name
+                <input className="album-name" type="text" />
+            </label>
+            )
+        }
+    }
+
 
     handleFile(e) {
         const file = e.currentTarget.files[0];
@@ -34,6 +46,11 @@ class PostPhoto extends React.Component {
         this.setState({
             body: e.target.value,
         });
+    }
+
+    toggleAlbums () {
+        const status = !this.state.showAlbum
+        this.setState({showAlbum: status})
     }
 
     handleSubmit(e) {
@@ -55,12 +72,15 @@ class PostPhoto extends React.Component {
         return (
             <div className="post-photo-container">
                 <form onSubmit={this.handleSubmit} className="post-photo-form">
+                    <h6 className="post-photo-title">Upload a photo</h6>
                     <label htmlFor="post-photo-button">Select a Photo
                         <input className="post-photo-button" type="file" onChange={this.handleFile} />
                     </label>
                     <label htmlFor="photo-form-body">Post Body (optional)
                         <input className="post-form-body" type="text" onChange={this.handleBody} />
                     </label>
+                    <label htmlFor="album" value="true" onClick={() => this.toggleAlbums()}>Create Album?</label>
+                    {this.renderAlbumOptions()}
                     <button type="submit">Create Post</button>
                 </form>
             </div>

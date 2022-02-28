@@ -18,9 +18,9 @@ class Nav extends React.Component {
     render() {
         return (
                 <div className="navbar">
-                    <Logo onClick={ () => this.props.history.push("/feed")}/>
+                    <Link to="/feed" style={{backgroundColor: "black"}}><Logo /></Link>
                     <ul className="navlink">
-                        <li className="navlink-open">Account</li>
+                        <Link to="/account"><li className="navlink-open">Account</li></Link>
                     </ul>
                     <ul className="navlink">
                         <li className="navlink-open">Create</li>

@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from './logo'
+import { Link } from 'react-router-dom';
 
 class EmptyNav extends React.Component {
     constructor(props){
@@ -11,7 +12,7 @@ class EmptyNav extends React.Component {
     render() {
         return (
                 <div className="navbar">
-                    <Logo />
+                    <Link to="/feed" style={{backgroundColor: "black"}}><Logo /></Link>
                 </div>
         )
     }
