@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import Logo from '../nav/logo';
+import PostPhoto from '../photo/post_photo';
 import photo from '../../../app/assets/images/seed/22.jpg'
 import a from '../../../app/assets/images/seed/23.jpg'
 import b from '../../../app/assets/images/seed/24.jpg'
@@ -27,7 +29,9 @@ class Feed extends React.Component {
     constructor(props){
         super(props);
 
-        
+        this.state = {
+            modalOpen: false,
+        }
 
 
     }
@@ -35,6 +39,11 @@ class Feed extends React.Component {
 
     componentDidMount() {
         this.props.fetchAllPhotos();
+    }
+
+    toggleModal () {
+        const status = !this.state.modalOpen;
+        this.setState({modalOpen: status})
     }
 
     renderRecentPosts() {
@@ -190,23 +199,69 @@ class Feed extends React.Component {
     }
 
     render() {
-                return (
-                    <div className="home-page">
-                        <NavContainer />
-                        <h1 className="feed-title">Your Recent Posts</h1>
-                        <div className="feed">
-                            <div className="feed-container">
-                                {this.renderPhotos()}
-                            </div>
+        if (this.state.modalOpen) {
+            return (
+                <div className="home-page">
+                    <div className="navbar">
+                        <Link to="/feed" style={{backgroundColor: "black"}}><Logo /></Link>
+                        <ul className="navlink">
+                            <Link to="/account"><li className="navlink-open">Account</li></Link>
+                        </ul>
+                        <ul className="navlink">
+                            <li className="navlink-open" onClick={() => this.toggleModal()}>Create</li>
+                        </ul>
+                        <ul className="navlink">
+                            <li className="navlink-open">Browse</li>
+                        </ul>
+                    <div className="navlink" alt="logout" onClick={() => this.props.logout()}>↩</div>
+                    </div>
+                    <h1 className="feed-title">Your Recent Posts</h1>
+                    <div className="feed">
+                        <div className="feed-container">
+                            {this.renderPhotos()}
                         </div>
-                        <h1 className="feed-title">Browse</h1>
-                        <div className="browse">
-                            <div className="browse-container">
-                                {this.renderRecentPosts()}
-                            </div>
-                        </div>       
+                    </div>
+                    <h1 className="feed-title">Browse</h1>
+                    <div className="browse">
+                        <div className="browse-container">
+                            {this.renderRecentPosts()}
+                        </div>
+                    </div>
+                    <PostPhotoContainer />       
+                </div>       
+            )
+        } else {
+
+            return (
+                <div className="home-page">
+                    <div className="navbar">
+                        <Link to="/feed" style={{backgroundColor: "black"}}><Logo /></Link>
+                        <ul className="navlink">
+                            <Link to="/account"><li className="navlink-open">Account</li></Link>
+                        </ul>
+                        <ul className="navlink">
+                            <li className="navlink-open" onClick={() => this.toggleModal()}>Create</li>
+                        </ul>
+                        <ul className="navlink">
+                            <li className="navlink-open">Browse</li>
+                        </ul>
+                    <div className="navlink" alt="logout" onClick={() => this.props.logout()}>↩</div>
+                    </div>
+                    <h1 className="feed-title">Your Recent Posts</h1>
+                    <div className="feed">
+                        <div className="feed-container">
+                            {this.renderPhotos()}
+                        </div>
+                    </div>
+                    <h1 className="feed-title">Browse</h1>
+                    <div className="browse">
+                        <div className="browse-container">
+                            {this.renderRecentPosts()}
+                        </div>
                     </div>       
-                )
+                </div>       
+            )
+        }
     }
 };
 
