@@ -62,35 +62,44 @@ class PostPhoto extends React.Component {
         if (this.state.showAlbum) {
             return (
                 <div className="post-photo-container">
-                <form onSubmit={this.handleSubmit} className="post-photo-form">
-                    <h6 className="post-photo-title">Upload a photo</h6>
-                    <label htmlFor="post-photo-button">Select a Photo
-                        <input className="post-photo-button" type="file" onChange={this.handleFile} />
-                    </label>
-                    <label htmlFor="photo-form-body">Post Body (optional)
-                        <input className="post-form-body" type="text" onChange={this.handleBody} />
-                    </label>
-                    <label htmlFor="album" value="true" onClick={() => this.toggleAlbums()}>Create Album?</label>
-                    <label htmlFor="album-name">Album Name
-                    <input className="album-name" type="text" />
-                    </label>
-                    <button type="submit">Create Album</button>
-                </form>
-            </div>
+                    <form onSubmit={this.handleSubmit} className="post-photo-form">
+                    <h1 className="close-modal"  onClick={() => this.props.onClose()}>X</h1>
+                    <h1 className="post-photo-title">Create a post by uploading a photo. Feel free to add an optional caption! It is also highly encouraged to create albums to help group your photos into categories!</h1>
+                        <label htmlFor="upload-photo-text">1. Select a Photo</label>
+                        <br/>
+                            <input className="upload-photo-button" type="file" onChange={this.handleFile} />
+                        <br/>
+                        <label htmlFor="upload-photo-caption-text">2. Photo Caption (optional)</label>
+                        <br></br>
+                        <input className="upload-photo-caption-button" type="text" onChange={this.handleBody} />
+                        
+                        <br />
+                        <div className="post-photo-buttons-container">
+                            <button className="create-album-button" onClick={() => this.toggleAlbums()}>Back</button>
+                            <button className="post-photo-button" type="submit">Create Post &amp; Album</button>
+                        </div>
+                    </form>
+                </div>
             )
         } else {
             return (
                 <div className="post-photo-container">
                     <form onSubmit={this.handleSubmit} className="post-photo-form">
-                        <h6 className="post-photo-title">Upload a photo</h6>
-                        <label htmlFor="post-photo-button">Select a Photo
-                            <input className="post-photo-button" type="file" onChange={this.handleFile} />
-                        </label>
-                        <label htmlFor="photo-form-body">Post Body (optional)
-                            <input className="post-form-body" type="text" onChange={this.handleBody} />
-                        </label>
-                        <label htmlFor="album" value="true" onClick={() => this.toggleAlbums()}>Create Album?</label>
-                        <button type="submit">Create Post</button>
+                    <h1 className="close-modal"  onClick={() => this.props.onClose()}>x</h1>
+                    <h1 className="post-photo-title">Create a post by uploading a photo. Feel free to add an optional caption! It is also highly encouraged to create albums to help group your photos into categories!</h1>
+                        <label htmlFor="upload-photo-text">1. Select a Photo</label>
+                        <br/>
+                            <input className="upload-photo-button" type="file" onChange={this.handleFile} />
+                        <br/>
+                        <label htmlFor="upload-photo-caption-text">2. Photo Caption (optional)</label>
+                        <br></br>
+                        <input className="upload-photo-caption-button" type="text" onChange={this.handleBody} />
+                        
+                        <br />
+                        <div className="post-photo-buttons-container">
+                            <button className="create-album-button" onClick={() => this.toggleAlbums()}>Album Options?</button>
+                            <button className="post-photo-button" type="submit">Create Post</button>
+                        </div>
                     </form>
                 </div>
             )

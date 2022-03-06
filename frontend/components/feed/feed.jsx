@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import Logo from '../nav/logo';
-import PostPhoto from '../photo/post_photo';
+import PostPhotoContainer from '../photo/post_photo_container';
 import photo from '../../../app/assets/images/seed/22.jpg'
 import a from '../../../app/assets/images/seed/23.jpg'
 import b from '../../../app/assets/images/seed/24.jpg'
@@ -227,7 +227,7 @@ class Feed extends React.Component {
                             {this.renderRecentPosts()}
                         </div>
                     </div>
-                    <PostPhotoContainer />       
+                    <PostPhotoContainer onClose={() => this.setState({modalOpen: false})}/>       
                 </div>       
             )
         } else {

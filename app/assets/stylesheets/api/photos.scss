@@ -99,3 +99,86 @@
     margin: 0 auto;
     border: 1px solid black;
 }
+
+.post-photo-container {
+    position: fixed;
+    width: 50vh;
+    height: 65vh;
+    top: 10%;
+    margin-left: 5vh;
+    border: 5px solid black;
+    z-index: 999999;
+    
+}
+
+.post-photo-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+
+.post-photo-title {
+    font-size: auto;
+    text-align: center;
+    padding: 1vh;
+    border-bottom: 2px solid grey;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.upload-photo-text, .upload-photo-caption-text  {
+    padding: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload-photo-caption-button {
+    line-height: 2;
+    background-color: lightblue;
+    border: 1px solid black;
+    width: 40vh;
+}
+
+.post-photo-buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.create-album-button {
+    padding: 2vh;
+    background-color: rgb(0, 102, 255);
+    color: white;
+    border-radius: 2px;
+    margin-right: 5vh;
+}
+
+.post-photo-button {
+    padding: 2vh;
+    background-color: rgb(247, 12, 168);
+    color: white;
+    margin-left: 5vh;
+    border-radius: 2px;
+}
+
+.close-modal {
+    position: absolute;
+    background-color: white;
+    color: black;
+    border-radius: 2px;
+    padding: 1vh;
+    cursor: pointer;
+    top: 0%;
+    left: 92%;
+
+    
+}
+
+.close-modal:hover {
+    background-color: black;
+    color: white;
+}
+
