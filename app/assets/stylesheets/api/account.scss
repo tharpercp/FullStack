@@ -21,6 +21,14 @@
     margin: 0 auto;
 }
 
+.account-social {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5vh;
+}
+
 .account-option {
     font-size: 30px;
     padding: 5vh;
@@ -28,3 +36,29 @@
     border-bottom: 3px solid black;
     border-radius: 3px;
 }
+
+.account-grid {
+    display: grid;
+    min-width: 95%;
+    gap: 1vh;
+    padding-block: 1vh;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+
+.grid-span-2 {
+    grid-column: span 2;
+    border-radius: 5px;
+    padding: 2vh;
+    line-height: 2;
+    background-color: lightgrey;
+}
+
+.grid-span-1 {
+    background-color: lightgrey;
+    border-radius: 5px;
+    padding: 2vh;
+    line-height: 2;
+}
+
+

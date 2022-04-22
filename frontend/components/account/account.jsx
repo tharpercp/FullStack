@@ -13,6 +13,12 @@ import i from '../../../app/assets/images/seed/31.jpg'
 import j from '../../../app/assets/images/seed/32.jpg'
 import k from '../../../app/assets/images/seed/33.jpg'
 import l from '../../../app/assets/images/seed/34.jpg'
+import m from '../../../app/assets/images/seed/35.jpg'
+import n from '../../../app/assets/images/seed/36.jpg'
+import o from '../../../app/assets/images/seed/37.jpg'
+import p from '../../../app/assets/images/seed/38.jpg'
+import q from '../../../app/assets/images/seed/39.jpg'
+import r from '../../../app/assets/images/seed/40.jpg'
 
 
 
@@ -102,7 +108,67 @@ class Account extends React.Component {
             )
         } else {
             return (
-                <div className="account-social">No social stats yet</div>
+                <div className="account-social">
+                    <div className="account-grid">
+                        <div className="comments-header grid-span-1">Your Comments</div>
+                        <div className="social-details grid-span-2">You have commented on 12 photos from 8 different users</div>
+                        <div className="popularity-header grid-span-1">Your Popularity</div>
+                        <div className="social-details grid-span-2">You have received a total of 28 comments. Each photo averages 2 comments!</div>
+                    </div>
+                    <div className="account-photos">
+                        <h1 className="account-photos-title">Photos You Have Interacted With:</h1>
+                        <div className="horizontal-feed">
+                        <div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={m} onClick={() => this.props.history.push("/photo/1232098239")}></img>
+                        </div>
+                        <div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={n}></img>
+                            
+                        </div><div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={o}></img>
+                            
+                        </div><div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={p}></img>
+                            
+                        </div><div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={q}></img>
+                            
+                        </div><div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={r}></img>
+                            
+                        </div>
+                        <div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={a}></img>
+                        </div>
+                        <div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={photo}></img>
+                        </div>
+                        <div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={g}></img>
+                        </div>
+                        <div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={h}></img>
+                        </div>
+                        <div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={i}></img>
+                            <sub className="horizontal-feed-item-text">{Math.floor(Math.random() * 10)}  💬    |    {Math.floor(Math.random() * 10)}  👍</sub>
+                        </div>
+                        <div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={j}></img>
+                            <sub className="horizontal-feed-item-text">{Math.floor(Math.random() * 10)}  💬    |    {Math.floor(Math.random() * 10)}  👍</sub>
+                        </div>
+                        <div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={k}></img>
+                            <sub className="horizontal-feed-item-text">{Math.floor(Math.random() * 10)}  💬    |    {Math.floor(Math.random() * 10)}  👍</sub>
+                        </div>
+                        <div className="horizontal-feed-item">
+                            <img className="horizontal-feed-img" src={l}></img>
+                            <sub className="horizontal-feed-item-text">{Math.floor(Math.random() * 10)}  💬    |    {Math.floor(Math.random() * 10)}  👍</sub>
+                        </div>
+                    </div>
+                    </div>
+
+                </div> 
             )
         }
     }

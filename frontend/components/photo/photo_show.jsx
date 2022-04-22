@@ -38,8 +38,8 @@ class PhotoShow extends React.Component {
                 <div className="photo-body">
                     <i>Photo taken on site at CCF headquarters in Otjiwarongo, Namibia. Learn more about the protection and conservation efforts at https://cheetah.org/</i>
                 </div>
-                <CommentContainer />
-                    <textarea
+                {/* <CommentContainer photoId={this.props.photoId}/> */}
+                <textarea onChange={this.handleChange}
                     className="comment-input"
                     rows="2"
                     type='text'

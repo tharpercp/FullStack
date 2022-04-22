@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { allComments } from '../../actions/comment';
+import { allComments, postComment, changeComment, destroyComment } from '../../actions/comment';
 import { logoutUser } from '../../actions/session';
 
 const mSTP = (state, ownProps) => ({
@@ -11,6 +11,7 @@ const mSTP = (state, ownProps) => ({
 
 const mDTP = dispatch => ({
   fetchAllComments: (photoId) => dispatch(allComments(photoId)),
+  submitComment: (comment) => dispatch(postComment(comment)),
   logout: () => dispatch(logoutUser())
 });
 

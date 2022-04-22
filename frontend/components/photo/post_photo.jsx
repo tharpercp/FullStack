@@ -12,6 +12,9 @@ class PostPhoto extends React.Component {
             photoFile: null,
             awsURL: null,
             showAlbum: false,
+            albumBody: '',
+            photo_id: '',
+            album_title: '', 
         }
 
         this.handleBody = this.handleBody.bind(this);
@@ -36,6 +39,12 @@ class PostPhoto extends React.Component {
         this.setState({
             body: e.target.value,
         });
+    }
+
+    handleTitle(e) {
+        this.setState({
+            album_title: e.target.value,
+        })
     }
 
     toggleAlbums () {
@@ -64,12 +73,17 @@ class PostPhoto extends React.Component {
                 <div className="post-photo-container">
                     <form onSubmit={this.handleSubmit} className="post-photo-form">
                     <h1 className="close-modal"  onClick={() => this.props.onClose()}>X</h1>
-                    <h1 className="post-photo-title">Create a post by uploading a photo. Feel free to add an optional caption! It is also highly encouraged to create albums to help group your photos into categories!</h1>
+                    <h1 className="post-photo-title">Create an album by uploading a photo, and naming your album (add an optional description if you would like). After submitting, you can add more pictures to the album on the account page.</h1>
                         <label htmlFor="upload-photo-text">1. Select a Photo</label>
                         <br/>
                             <input className="upload-photo-button" type="file" onChange={this.handleFile} />
                         <br/>
-                        <label htmlFor="upload-photo-caption-text">2. Photo Caption (optional)</label>
+                        <label htmlFor="upload-photo-caption-text">2. Album Name</label>
+                        <br></br>
+                        <input className="upload-photo-caption-button" type="text" onChange={this.handleTitle} />
+                        
+                        <br />
+                        <label htmlFor="upload-photo-caption-text">2. Album Description (optional)</label>
                         <br></br>
                         <input className="upload-photo-caption-button" type="text" onChange={this.handleBody} />
                         

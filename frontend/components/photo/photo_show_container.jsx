@@ -6,7 +6,6 @@ import PhotoShow from './photo_show';
 
 const mSTP = (state) => ({
     currentUser: state.entities.users[state.session.currentUser],
-
 });
 
 const mDTP = (dispatch) => ({
